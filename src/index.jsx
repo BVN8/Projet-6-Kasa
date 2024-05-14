@@ -21,8 +21,8 @@ const GlobalStyle = createGlobalStyle`
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-    <GlobalStyle />
       <Header />
+      <GlobalStyle />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/apropos" element={<Apropos />} />

@@ -1,31 +1,12 @@
-import styled from "styled-components";
 import logoblanc from "../../assets/logoblanc.png";
-
-const FooterContainer = styled.div`
-  background-color: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 0;
-`;
-
-const PagePar = styled.p`
-  color: white;
-  padding-top: 15px;
-`;
-
-const StyleLogo = styled.img`
-  height: 30px;
-  padding-bottom: 15px;
-  padding-top: 10px;
-`;
+import "../../utils/style/footer.scss";
 
 function Footer () {
     return (
-        <FooterContainer>
-            <StyleLogo src={logoblanc} alt="logo kasa blanc"/>
-            <PagePar>© 2020 Kasa. All rights reserved</PagePar>
-        </FooterContainer>
+        <div className="FooterContainer">
+            <img className="StyleLogo" src={logoblanc} alt="logo kasa blanc"/>
+            <p className="PagePar">© 2020 Kasa. All rights reserved</p>
+        </div>
     )
 }
 

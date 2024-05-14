@@ -1,0 +1,43 @@
+
+.apropos-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .logo {
+    border-radius: 20px;
+    object-fit: cover;
+    height: 200px;
+    width: 1800px;
+  }
+
+  .valeurs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+
+    .cadre-mot {
+      border-radius: 5px;
+      width: 800px;
+      padding: 10px;
+      margin: 20px;
+      display: flex;
+      align-items: center;
+      background-color: #ff6060;
+
+      .mot-text {
+        flex: 1;
+        color: white;
+        font-weight: bold;
+      }
+
+      .arrow-icon {
+        height: 25px;
+        cursor: pointer;
+      }
+    }
+  }
+}

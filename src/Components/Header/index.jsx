@@ -1,36 +1,30 @@
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import styled from "styled-components";
-
-const StyleLogo = styled.img`
-  height: 45px;
-`;
-
-const NavContainer = styled.nav`
-  padding: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  padding-right: 55px;
-  color: black;
-  font-weight: bold;
-`;
+import "../../utils/style/header.scss";
 
 function Header() {
+  const location = useLocation();
+
+  const isVisited = (to) => {
+    return location.pathname === to;
+  };
+
   return (
-    <NavContainer>
-      <Link to="/">
-        <StyleLogo src={logo} alt="logo kasa saumon" />{" "}
-      </Link>
+    <nav className="nav-container">
+      <img className="logo" src={logo} alt="logo kasa saumon" />
       <div>
-        <StyledLink to="/">Accueil</StyledLink>
-        <StyledLink to="/apropos">A propos</StyledLink>
+        <Link to="/" className={`link ${isVisited("/") ? "visited" : ""}`}>
+          Accueil
+        </Link>
+        <Link
+          to="/apropos"
+          className={`link ${isVisited("/apropos") ? "visited" : ""}`}
+        >
+          A Propos
+        </Link>
       </div>
-    </NavContainer>
+    </nav>
   );
 }
 
