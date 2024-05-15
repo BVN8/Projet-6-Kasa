@@ -1,18 +1,17 @@
 .FooterContainer {
   background-color: black;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: 20px 0;
+  flex-direction:column ;
 
   .PagePar {
     color: white;
-    padding-top: 15px;
+    padding-top: 25px;
 
-    .StyleLogo {
-      height: 30px;
-      padding-bottom: 15px;
-      padding-top: 10px;
-    }
   }
 }

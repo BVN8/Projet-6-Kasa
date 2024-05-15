@@ -1,4 +1,3 @@
-
 .apropos-page {
   display: flex;
   justify-content: center;
@@ -21,7 +20,7 @@
 
     .cadre-mot {
       border-radius: 5px;
-      width: 800px;
+      width: 1500px;
       padding: 10px;
       margin: 20px;
       display: flex;
@@ -32,12 +31,38 @@
         flex: 1;
         color: white;
         font-weight: bold;
+        cursor: pointer;
       }
 
       .arrow-icon {
         height: 25px;
         cursor: pointer;
+        transition: transform 0.3s;
       }
     }
+
+    .cadre-mot.no-margin {
+      margin: 0;
+    }
   }
+}
+
+.arrow-icon.rotated {
+  transform: rotate(180deg);
+}
+
+.depliant-apropos {
+  background-color: #F9F9F9;
+  border-radius: 0px 0px 10px 10px;
+  width: 1480px;
+  height: 70px;
+  padding: 20px;
+}
+
+.arrow-icon-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
 }

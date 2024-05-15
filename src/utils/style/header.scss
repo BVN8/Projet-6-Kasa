@@ -1,27 +1,27 @@
 .nav-container {
-    padding: 30px 30px 30px 65px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 30px 30px 30px 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   
-    .link {
+  .link {
+    text-decoration: none;
+    padding-right: 55px;
+    color: black;
+    font-weight: bold;
+  
+    &:hover {
       text-decoration: none;
-      padding-right: 55px;
-      color: black;
-      font-weight: bold;
-  
-      &:hover {
-        text-decoration: none;
-      }
     }
-  
-    &.visited .link {
+    
+    &.visited {
       text-decoration: underline;
-      color: black;
       text-decoration-thickness: 2px;
+      color: black;
     }
   }
-  
-  .logo {
-    height: 45px;
-  }
+}
+
+.logo {
+  height: 45px;
+}
