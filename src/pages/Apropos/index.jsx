@@ -11,7 +11,7 @@ function Apropos() {
   };
 
   return (
-    <div className="apropos-page">
+    <nav className="apropos-page">
       <img className="logo" src={photoapropos} alt="montagnes" />
       <div className="valeurs">
         <div className={`cadre-mot ${openIndex === 0 ? "no-margin" : ""}`}>
@@ -62,7 +62,7 @@ function Apropos() {
         </div>
         {openIndex === 3 && <div className="depliant-apropos">Texte sur la sécurité</div>}
       </div>
-    </div>
+    </nav>
   );
 }
 
