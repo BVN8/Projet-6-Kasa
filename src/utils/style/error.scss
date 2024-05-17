@@ -1,0 +1,20 @@
+.error-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 139px;
+  margin-bottom: 139px;
+
+  .error-phrase {
+    color: #ff6060;
+    font-size: 36px;
+    margin-top: 139px;
+    margin-bottom: 139px;
+  }
+}
+
+a {
+  color: black;
+  font-weight: bold;
+}
