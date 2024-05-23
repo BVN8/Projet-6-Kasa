@@ -51,7 +51,6 @@
 
 .location {
   background-color: #ff6060;
-  border: solid;
   color: white;
   border-radius: 10px;
   height: 250px;
@@ -61,3 +60,8 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.location-link {
+  text-decoration: none;
+}
+

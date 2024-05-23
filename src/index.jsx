@@ -3,10 +3,11 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
-import Apropos from "./pages/Apropos";
+import Apropos from "./Components/Apropos";
 import Footer from "./Components/Footer"
 import Error from "./Components/Error"
 import { createGlobalStyle } from "styled-components";
+import Logement from "./Components/Logement"
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -28,6 +29,7 @@ ReactDOM.render(
         <Route path="/" element={<Home />} />
         <Route path="/apropos" element={<Apropos />} />
         <Route path="*" element={<Error />} />
+        <Route path='/logement' element={<Logement />} />
       </Routes>
       <Footer />
     </Router>
