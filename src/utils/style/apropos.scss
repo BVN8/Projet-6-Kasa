@@ -16,14 +16,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
-    margin-bottom: 100px;
+    margin-top: 50px;
 
     .cadre-mot {
       border-radius: 5px;
       width: 1023px;
-      padding: 10px;
-      margin: 20px;
+      padding: 0 10px 0 10px;
+      margin: 10px;
       display: flex;
       align-items: center;
       background-color: #ff6060;

@@ -50,15 +50,28 @@
 }
 
 .location {
-  background-color: #ff6060;
   color: white;
   border-radius: 10px;
-  height: 250px;
   display: flex;
   align-items: flex-end;
   padding: 0px 15px 15px 15px;
   font-weight: bold;
+  height: 250px;
+  font-size: 15px;
   cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.location-title {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  margin: 0;
+  padding: 5px;
+  z-index: 1;
 }
 
 .location-link {

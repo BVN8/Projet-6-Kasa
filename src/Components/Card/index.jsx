@@ -1,22 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-const locations = [
-  "Titre de la location 1",
-  "Titre de la location 2",
-  "Titre de la location 3",
-  "Titre de la location 4",
-  "Titre de la location 5",
-  "Titre de la location 6",
-];
+import locations from "../Data";
 
 function Card() {
+
   return (
     <div className="wrapper-grid">
-      {locations.map((title, index) => (
+      {locations.map((location, index) => (
         <Link key={index} to="/logement" className="location-link">
-          <div className="location">
-            {title}
+          <div
+            className="location"
+            style={{ backgroundImage: `url(${location.cover})` }}
+          >
+            <h2 className="location-title">{location.title}</h2>
           </div>
         </Link>
       ))}

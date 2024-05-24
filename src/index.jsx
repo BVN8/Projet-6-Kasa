@@ -15,24 +15,39 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
-  body {
-    margin: 0;
+  html, body {
+    height: 100%;
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .MainContent {
+    flex: 1;
   }
 `;
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <Header />
-      <GlobalStyle />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/apropos" element={<Apropos />} />
-        <Route path="*" element={<Error />} />
-        <Route path='/logement' element={<Logement />} />
-      </Routes>
-      <Footer />
-    </Router>
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+function App() {
+  return (
+    <React.StrictMode>
+      <Router>
+        <GlobalStyle />
+        <Header />
+        <div className="MainContent">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/apropos" element={<Apropos />} />
+            <Route path="*" element={<Error />} />
+            <Route path='/logement/' element={<Logement />} />
+          </Routes>
+        </div>
+        <Footer />
+      </Router>
+    </React.StrictMode>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
