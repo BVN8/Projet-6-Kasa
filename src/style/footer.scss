@@ -1,20 +1,24 @@
-.FooterContainer {
-  background-color: black;
-  color: white;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  flex-direction:column ;
-
-  .PagePar {
-    color: white;
-    padding-top: 25px;
-
-  }
-}
-
-#root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+footer {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 45px 0 20px 0;
+    img {
+        height: 30px;
+        margin-bottom: 25px;
+    }
+    p {
+        font-size: 24px;
+        font-weight: 500;
+        color: white;
+        margin: 0;
+        text-align: center;
+        @media (max-width: 768px) {
+            font-size: 20px;
+        }
+        @media (max-width: 480px) {
+            font-size: 12px;
+        }
+    }
 }

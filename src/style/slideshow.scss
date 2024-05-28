@@ -1,0 +1,43 @@
+.slideshow-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  .slideshow-img {
+    width: 1240px;
+    height: 415px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+
+  .button-slide {
+    position: absolute;
+    top: 45%;
+    width: 57%;
+    display: flex;
+    justify-content: space-between;
+
+    .arrow-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      
+
+      img {
+        width: 65px;
+        height: 65px;
+      }
+    }
+  }
+
+  .slide-indicator {
+    margin-top: 10px;
+    position: absolute;
+    top: 360px;
+    p {
+      font-size: 14px;
+      color: white;
+    }
+  }
+}

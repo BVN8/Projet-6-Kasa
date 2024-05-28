@@ -1,13 +1,13 @@
 import logoblanc from "../../assets/logoblanc.png";
 import "../../style/footer.scss";
 
-function Footer () {
+function Footer() {
     return (
-        <div className="FooterContainer">
-            <img className="StyleLogo" src={logoblanc} alt="logo kasa blanc"/>
-            <p className="PagePar">© 2020 Kasa. All rights reserved</p>
-        </div>
+      <footer>
+        <img src={logoblanc} alt="Logo Kasa"/>
+        <p>© 2020 Kasa. All rights reserved</p>
+      </footer>
     )
-}
-
+  }
+  
 export default Footer;

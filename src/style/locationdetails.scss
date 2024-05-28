@@ -1,8 +1,67 @@
 .location-name {
-    margin-left: 70px;
+    margin-left: 337px;
     color: #FF6060;
-    margin-top: 40px;
-    font-size: 36px;
-    letter-spacing: 1px;
+    margin-top: 30px;
+    font-size: 30px;
     font-weight: 100;
+}
+
+.location-wrapper-host {
+    display: flex;
+    justify-content: space-between;
+}
+
+.host-picture {
+    border-radius: 80px;
+    width: 64px;
+    height: 64px;
+    margin-top: 20px;
+    position: absolute;
+    left: 1500px;
+}
+
+.host-name {
+    color: #FF6060;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 1430px;
+    gap: 7px;
+}
+
+.appartment-location {
+    font-weight: bold;
+    position: absolute;
+    margin-left: 339px;
+    margin-top: 7px;
+}
+
+.location-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:50px;
+    margin-left: 295px;
+    margin-right: 340px;
+}
+
+.location-tags-list {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.location-tags {
+    background-color: #FF6060;
+    color: white;
+    padding: 5px 40px 5px 40px;
+    border-radius: 15px;
+    list-style: none;
+    font-weight: bold;
+}
+
+.location-wrapper-rating {
+    display: flex;
+    flex-direction: row;
 }

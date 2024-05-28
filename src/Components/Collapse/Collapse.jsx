@@ -1,21 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import arrowSvg from "../../assets/chevron-up.svg";
-import "../../style/about.scss";
+import "../../style/collapse.scss";
 
-function Collapse({ index, openIndex, toggleOpen, title, children }) {
-  return (
-    <div className={`cadre-mot ${openIndex === index ? "no-margin" : ""}`}>
-      <span onClick={() => toggleOpen(index)} className="mot-text">{title}</span>
-      <button className="arrow-icon-button">
-        <img
-          className={`arrow-icon ${openIndex === index ? "rotated" : ""}`}
-          src={arrowSvg}
-          alt="Arrow"
-        />
-      </button>
-      {openIndex === index && <div className="depliant-apropos">{children}</div>}
-    </div>
-  );
-}
 
+function Collapse(props) {
+  const {categoryName, categoryDetails} = props;
+  const [activeButton, setActiveButton] = useState(false);
+
+    return (
+      <div className="accordion">
+        <button 
+        className={`accordion__title ${activeButton ? "active" : ""}`} 
+        onClick={() => setActiveButton(!activeButton)}
+        >
+        <p>{categoryName}</p>
+        <img className={`${activeButton ? "active" : ""}`}
+        src={arrowSvg} alt="arrowDown"
+        >
+        </img>
+        </button>
+        <div 
+        className={`accordion__description ${activeButton ? "active" : ""}`}
+        >
+          <div className={`accordion__description-details ${activeButton ? "active" : ""}`}>{categoryDetails}</div>
+        </div>
+      </div>
+    )
+  }
+  
 export default Collapse;
