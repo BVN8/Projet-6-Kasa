@@ -1,7 +1,5 @@
-import React from "react";
-import "../../utils/style/error.scss";
+import "../../style/error.scss";
 import logo404 from "../../assets/D_404.png";
-import { Link } from "react-router-dom";
 
 function Error() {
   return (
@@ -11,7 +9,7 @@ function Error() {
         Oups ! La page que vous demandez n'existe pas.
       </div>
       <div>
-        <Link to="/">Retourner sur la page d'accueil</Link>
+        <a href="/">Retourner sur la page d'accueil</a>
       </div>
     </nav>
   );

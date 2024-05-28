@@ -1,32 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./Components/Header";
-import Home from "./Components/Home";
-import Apropos from "./Components/Apropos";
-import Footer from "./Components/Footer"
-import Error from "./Components/Error"
+import Home from "./pages/Home/home";
+import About from "./pages/About/About";
+import Footer from "./Components/Footer";
+import ErrorPage from "./Components/Error/Error";
 import { createGlobalStyle } from "styled-components";
-import Logement from "./Components/Logement"
+import LocationDetails from "./pages/LocationDetails/LocationDetails";
 
 const GlobalStyle = createGlobalStyle`
   * {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
-  }
-
-  html, body {
-    height: 100%;
-  }
-
-  #root {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  .MainContent {
-    flex: 1;
   }
 `;
 
@@ -36,14 +22,13 @@ function App() {
       <Router>
         <GlobalStyle />
         <Header />
-        <div className="MainContent">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/apropos" element={<Apropos />} />
-            <Route path="*" element={<Error />} />
-            <Route path='/logement/' element={<Logement />} />
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/apropos" element={<About />} />
+          <Route path="/error" element={<ErrorPage />} />
+          <Route exact path="/locations/:locationId" element={<LocationDetails />} />
+          <Route path="*" element={<Navigate to="/error" replace />} />
+        </Routes>
         <Footer />
       </Router>
     </React.StrictMode>

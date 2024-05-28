@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import "../../utils/style/header.scss";
+import "../../style/header.scss";
 
 function Header() {
   const location = useLocation();
@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <nav className="nav-container">
-      <img className="logo" src={logo} alt="logo kasa saumon" />
+      <img className="logo" src={logo} alt="logo kasa rouge" />
       <div>
         <Link to="/" className={`link ${isVisited("/") ? "visited" : ""}`}>
           Accueil
@@ -21,7 +21,7 @@ function Header() {
           to="/apropos"
           className={`link ${isVisited("/apropos") ? "visited" : ""}`}
         >
-          A Propos
+          À Propos
         </Link>
       </div>
     </nav>
