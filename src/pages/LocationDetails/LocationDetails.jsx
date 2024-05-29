@@ -1,55 +1,72 @@
-import React from "react";
-import { useParams, Navigate } from "react-router-dom";
-import locationsDatas from "../../data/locationDatas";
+import locationDatas from "../../data/locationDatas";
+import { useParams } from "react-router-dom";
+import Slideshow from "../../Components/Slideshow/Slide_show.jsx";
+import Tags from "../../Components/Tags/Tags";
+import Collapse from "../../Components/Collapse/Collapse";
+import Rating from "../../Components/Rating/Rating";
+import { Navigate } from "react-router-dom";
 import "../../style/locationdetails.scss";
-import Slideshow from "../../Components/Slideshow/Slide_show";
-import Rating from "../../Components/Rating/Rating.jsx"
 
-function LocationsDetails() {
+function LocationDetails() {
   const { locationId } = useParams();
-  const location = locationsDatas.find(
-    (location) => location.id === locationId
-  );
+  const location = locationDatas.find((location) => location.id === locationId);
 
   if (!location) {
     return <Navigate to="/error" />;
-  }
-
-  return (
-    <nav>
-      <Slideshow
-        imgSrc={location.pictures}
-        imgAlt={`${location.title} ${location.location}`}
-      />
-      <div className="location-wrapper-host">
-        <p className="location-name">{location.title}</p>
-        <img
-          className="host-picture"
-          src={location.host.picture}
-          alt={location.host.name}
+  } else {
+    return (
+      <main className="location-container1">
+        <Slideshow
+          imgSrc={location.pictures}
+          imgAlt={`${location.title} ${location.location}`}
         />
-        <div className="host-name">
-          <p>{location.host.name.split(" ")[0]}</p>
-          <p>{location.host.name.split(" ")[1]}</p>
+        <div className="location-about">
+          <div className="location-main-informations">
+            <div className="location-title1">
+              <h1>{location.title}</h1>
+              <p>{location.location}</p>
+            </div>
+            <div className="location-tags">
+              <Tags
+                tagName={
+                  <ul className="tags-list">
+                    {location.tags.map((tag) => (
+                      <li className="tag-item" key={`${tag}-${location.id}`}>
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                }
+              />
+            </div>
+          </div>
+          <div className="host-informations">
+            <div className="host-identity">
+              <p>{location.host.name}</p>
+              <img src={location.host.picture} alt="Host" />
+            </div>
+            <Rating rating={location.rating} />
+          </div>
         </div>
-      </div>
-      <p className="appartment-location">{location.location}</p>
-      <div className="location-wrapper">
-        <ul className="location-tags-list">
-          {location.tags.map((tag) => (
-            <li className="location-tags" key={`${tag}-${location.id}`}>{tag}</li>
-          ))}
-        </ul>
-        <Rating rating={location.rating} />
-      </div>
-      <ul>
-        {location.equipments.map((equipment, index) => (
-          <li key={index}>{equipment}</li>
-        ))}
-      </ul>
-      <p>{location.description}</p>
-    </nav>
-  );
+        <div className="accordions-wrapper-location">
+          <Collapse
+            categoryName="Description"
+            categoryDetails={location.description}
+          />
+          <Collapse
+            categoryName="Équipements"
+            categoryDetails={
+              <ul>
+                {location.equipments.map((equipment) => (
+                  <li key={`${equipment}-${location.id}`}>{equipment}</li>
+                ))}
+              </ul>
+            }
+          />
+        </div>
+      </main>
+    );
+  }
 }
 
-export default LocationsDetails;
+export default LocationDetails;

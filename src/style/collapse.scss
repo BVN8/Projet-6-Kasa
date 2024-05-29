@@ -2,7 +2,6 @@
     position: relative;
     flex-direction: column;
     align-items: center;
-    background-color: grey;
     width: 83%;
     &__title {
         position: absolute;
@@ -35,22 +34,23 @@
 
 .accordion__description {
     background-color: #F6F6F6;
-    color: #FF6060;
+    color: black;
     height: 45px;
     font-weight: 400;
     transition: 0.2s linear;
+    margin-bottom: 25px;
     &.active {
         transition: 0.2s linear;
         height: fit-content;
     }
 }
 
-.accordion__description-details {
+.accordion__description-details ul li {
     overflow: hidden;
-    height: 45px;
     transition: 0.2s linear;
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    text-decoration: none;
     &.active {
         transition: 0.2s linear;
         display: block;

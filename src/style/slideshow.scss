@@ -1,43 +1,77 @@
-.slideshow-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
 
-  .slideshow-img {
-    width: 1240px;
-    height: 415px;
-    border-radius: 20px;
-    object-fit: cover;
-  }
 
-  .button-slide {
-    position: absolute;
-    top: 45%;
-    width: 57%;
+.slideshow {
+    position: relative;
     display: flex;
-    justify-content: space-between;
-
-    .arrow-button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      
-
-      img {
-        width: 65px;
-        height: 65px;
-      }
+    flex-direction: column;
+    width: 100%;
+    height: 415px;
+    border-radius: 25px;
+    justify-content: center ;
+    align-items: center;
+    @media (max-width: 1024px) {
+        height: 350px;
     }
-  }
+    @media (max-width: 768px) {
+        height: 300px;
+    }
+    &__image {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+        object-fit: cover;
+        transition: opacity 0.5s ease-in-out;
+    }
+}
 
-  .slide-indicator {
-    margin-top: 10px;
+.slideshow__informations {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     position: absolute;
-    top: 360px;
-    p {
-      font-size: 14px;
-      color: white;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    height: 85px;
+    @media (max-width: 768px) {
+        height: 60px;
     }
-  }
+    @media (max-width: 480px) {
+        height: 25px;
+    }
+    .slideshow-navigation {
+        justify-content: space-between;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        height:100%;
+        button {
+            margin: 0 20px;
+            padding: 0;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            img {
+                height: 80%;
+            }
+        }
+    }
+}
+
+.slideshow__counter {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    @media (max-width: 480px) {
+        display: none;
+    }
+    p {
+        margin-bottom: 20px;
+        color: white;
+    }
 }
