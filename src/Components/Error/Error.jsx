@@ -5,9 +5,9 @@ function Error() {
   return (
     <nav className="error-page">
       <img className="StyleLogo" src={logo404} alt="logo 404"></img>
-      <div className="error-phrase">
+      <p className="error-phrase">
         Oups ! La page que vous demandez n'existe pas.
-      </div>
+      </p>
       <div>
         <a href="/">Retourner sur la page d'accueil</a>
       </div>

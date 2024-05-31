@@ -1,77 +1,75 @@
-
-
 .slideshow {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 415px;
+  border-radius: 25px;
+  justify-content: center;
+  align-items: center;
+
+  &__image {
     position: relative;
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    height: 415px;
+    height: 100%;
     border-radius: 25px;
-    justify-content: center ;
-    align-items: center;
-    @media (max-width: 1024px) {
-        height: 350px;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
+
+    @media (max-width: 1048px) {
+      height: 350px;
     }
-    @media (max-width: 768px) {
-        height: 300px;
-    }
-    &__image {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        border-radius: 25px;
-        object-fit: cover;
-        transition: opacity 0.5s ease-in-out;
-    }
+  }
 }
 
 .slideshow__informations {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  height: 85px;
+
+  .slideshow-navigation {
+    justify-content: space-between;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     position: absolute;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    height: 85px;
-    @media (max-width: 768px) {
-        height: 60px;
-    }
-    @media (max-width: 480px) {
-        height: 25px;
-    }
-    .slideshow-navigation {
-        justify-content: space-between;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        position: absolute;
-        height:100%;
-        button {
-            margin: 0 20px;
-            padding: 0;
-            border: none;
-            background-color: transparent;
-            cursor: pointer;
-            img {
-                height: 80%;
-            }
+    height: 100%;
+    button {
+      margin: 0 20px;
+      padding: 0;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      img {
+        height: 80%;
+
+        @media (max-width: 480px) {
+          height: 30px;
         }
+      }
     }
+  }
 }
 
 .slideshow__counter {
-    position: absolute;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: flex-end;
-    @media (max-width: 480px) {
-        display: none;
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: flex-end;
+
+  p {
+    margin-bottom: 20px;
+    color: white;
+
+    @media (max-width: 1048px) {
+        margin-bottom: 45px;
     }
-    p {
-        margin-bottom: 20px;
-        color: white;
-    }
+  }
 }

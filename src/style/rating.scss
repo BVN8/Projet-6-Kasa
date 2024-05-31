@@ -1,7 +1,19 @@
 .rating img {
-    height: 24px;
+  height: 24px;
 }
 
 .stars-list__item {
-list-style: none;
+  list-style: none;
+
+  @media (max-width: 768px) {
+    margin-left: -40px;
+  }
 }
+
+  img {
+    @media (max-width: 768px) {
+      height: 18px;
+    }
+  }
+
+
